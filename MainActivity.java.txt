@@ -1,0 +1,180 @@
+package com.example.nkhaibo;
+
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText editName, editMSSV, editNgaySinh, editPhoneNumber, editEmail;
+    CheckBox checkBox1, checkBox2, checkBox3, checkBox4;
+    RadioButton radioButton1, radioButton2;
+    Button button1, button2;
+
+
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        editName = findViewById(R.id.edit_name);
+        String name = editName.getText().toString();
+        editName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() ==0) {
+                    editName.setError("Bạn bắt buộc phải nhập Họ Tên");
+                } else {
+                    editName.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        editMSSV = findViewById(R.id.edit_mssv);
+        String mssv = editMSSV.getText().toString();
+        editMSSV.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() ==0) {
+                    editMSSV.setError("Bạn bắt buộc phải nhập MSSV");
+                } else {
+                    editMSSV.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        editNgaySinh = findViewById(R.id.edit_ngaysinh);
+        String ngaysinh = editName.getText().toString();
+        editName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() ==0) {
+                    editNgaySinh.setError("Bạn bắt buộc phải nhập Ngày Sinh");
+                } else {
+                    editNgaySinh.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        editPhoneNumber = findViewById(R.id.edit_phonenumber);
+        String phonenumber = editName.getText().toString();
+        editPhoneNumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() ==0) {
+                    editPhoneNumber.setError("Số điện thoại chưa nhập");
+                } else {
+                    editPhoneNumber.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        editEmail = findViewById(R.id.edit_email);
+        String email = editEmail.getText().toString();
+        editEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() ==0) {
+                    editEmail.setError("Email chưa nhập");
+                } else {
+                    editEmail.setError(null);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+        button1 = findViewById(R.id.button1);
+        checkBox4 = findViewById(R.id.checkBox4);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(editName.length() == 0){
+                    Toast.makeText(MainActivity.this, "Bạn chưa điền tên", Toast.LENGTH_SHORT).show();
+                    return;}
+                if(editMSSV.length() == 0){
+                    Toast.makeText(MainActivity.this, "Bạn chưa điền MSSV", Toast.LENGTH_SHORT).show();
+                    return;}
+                if(editNgaySinh.length() == 0){
+                    Toast.makeText(MainActivity.this, "Bạn chưa điền Ngày Sinh", Toast.LENGTH_SHORT).show();
+                    return;}
+                if(editPhoneNumber.length() == 0){
+                    Toast.makeText(MainActivity.this, "Bạn chưa điền Số Điện Thoại", Toast.LENGTH_SHORT).show();
+                    return;}
+                if(editEmail.length() == 0){
+                    Toast.makeText(MainActivity.this, "Bạn chưa điền Email", Toast.LENGTH_SHORT).show();
+                    return;}
+                if (checkBox4.isChecked()){
+                    Toast.makeText(MainActivity.this, "Khai báo thành công", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(MainActivity.this, "Bạn chưa đồng ý điều khoản", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editName.getText().clear();
+                editMSSV.getText().clear();
+                editNgaySinh.getText().clear();
+                editPhoneNumber.getText().clear();
+                editEmail.getText().clear();
+            }
+        });
+    }
+}
