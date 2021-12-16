@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/text_view1"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:background="@drawable/ic_name"
+        android:gravity="center"
+        android:textSize="27dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Google.com"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_view3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Pull Command GitHub là gì? Lệnh PULL request là lệnh quan trọng nhất trên GitHub. Nó cho biết những thay đổi trong source code. Nó yêu cầu owner của source code xem xét và merge vào master branch."
+            android:textColor="@color/black"
+            android:textSize="22dp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/image_view1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/ic_baseline_star_outline_24">
+    </ImageView>
+
+</LinearLayout>
